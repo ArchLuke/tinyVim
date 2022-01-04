@@ -513,7 +513,11 @@ void editorRowDelChar(erow *row, int at) {
 
 /*** editor operations ***/
 
+
 void editorInsertChar(int c) {
+  if(c == ARROW_UP || c == ARROW_RIGHT || c == ARROW_LEFT || c == ARROW_DOWN){
+	  return;
+  }
   if (E.cy == E.numrows) {
     editorInsertRow(E.numrows, "", 0);
   }
